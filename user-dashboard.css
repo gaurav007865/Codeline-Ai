@@ -1,0 +1,258 @@
+/* =========================================================
+   🌐 USER DASHBOARD (SkillNest - 3 Column Layout)
+========================================================= */
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f6f8fc;
+  color: #222;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ----------------------------
+   📘 Sidebar
+----------------------------- */
+.user-sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #0078ff, #00c6ff);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 0;
+  position: fixed;
+  height: 100%;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-sidebar h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.user-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-sidebar li {
+  padding: 14px 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.user-sidebar li:hover,
+.user-sidebar li.active {
+  background: rgba(255, 255, 255, 0.25);
+  border-left: 4px solid #fff;
+}
+
+.logout-btn {
+  margin-top: auto;
+  align-self: center;
+  background: #ff4b5c;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #ff1f3c;
+}
+
+/* ----------------------------
+   🧠 Main Area
+----------------------------- */
+.user-main {
+  flex: 1;
+  margin-left: 240px;
+  padding: 40px 60px;
+  overflow-y: auto;
+  background: #f8faff;
+}
+
+.user-main h2 {
+  font-size: 1.9rem;
+  color: #0078ff;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+/* ----------------------------
+   🔲 Dashboard Grid
+----------------------------- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.column {
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.column:hover {
+  transform: translateY(-4px);
+}
+
+.column h3 {
+  color: #0078ff;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+/* ----------------------------
+   📋 Cards inside each column
+----------------------------- */
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card {
+  background: #f9fbff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card h4 {
+  color: #0078ff;
+  margin-bottom: 5px;
+}
+
+.card p {
+  color: #444;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.btn {
+  background: linear-gradient(90deg, #0078ff, #00c6ff);
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* ----------------------------
+   🏅 Status and Certificate
+----------------------------- */
+.status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.status.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status.approved {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status.completed {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.certificate-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #0078ff, #00c6ff);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ----------------------------
+   📱 Responsive
+----------------------------- */
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .user-sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    height: auto;
+    padding: 10px;
+  }
+
+  .user-main {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================================
+   🔄 Section Switching Styles
+========================================================= */
+.section {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.active-section {
+  display: block;
+}
+
+.hidden-section {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

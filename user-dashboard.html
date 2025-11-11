@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard - SkillNest</title>
+  <link rel="stylesheet" href="user-dashboard.css" />
+</head>
+<body>
+
+  <!-- 🧭 SIDEBAR -->
+  <div class="user-sidebar">
+    <h2>SkillNest</h2>
+    <ul>
+      <li class="active" onclick="showSection('dashboard')">🏠 Dashboard</li>
+      <li onclick="showSection('courses')">📚 Courses</li>
+      <li onclick="showSection('requests')">🧾 Requests</li>
+      <li onclick="showSection('certificates')">🏅 Certificates</li>
+    </ul>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <!-- 🧠 MAIN CONTENT -->
+  <div class="user-main">
+
+    <!-- 🌟 WELCOME HEADER -->
+    <div class="header">
+      <h2>👋 Welcome, <span id="userName">Gaurav</span>!</h2>
+      <p class="subtitle">Manage your courses, track requests, and view certificates.</p>
+    </div>
+
+    <!-- ===========================
+         SECTION: DASHBOARD (default)
+    ============================ -->
+    <section id="dashboard" class="section active-section">
+      <div class="dashboard-grid">
+        <div class="column">
+          <h3>📘 Available Courses</h3>
+          <div class="card-list" id="availableCourses">
+            <div class="card">
+              <h4>Java Programming</h4>
+              <p>Master OOP concepts and build Java apps.</p>
+              <button class="btn">Enroll Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <h3>🧾 My Course Requests</h3>
+          <div class="card-list" id="myRequests">
+            <div class="card">
+              <h4>Python for Beginners</h4>
+              <p>Status: <span class="status pending">Pending</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <h3>🏅 My Purchased Courses</h3>
+          <div class="card-list" id="purchasedCourses">
+            <div class="card">
+              <h4>HTML & CSS Mastery</h4>
+              <p>Completed: <span class="status completed">Yes</span></p>
+              <span class="certificate-badge">🎓 Certificate Available</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         SECTION: COURSES
+    ============================ -->
+    <section id="courses" class="section hidden-section">
+      <h3>📚 All Available Courses</h3>
+      <div class="my-courses">
+        <div class="my-course-card">
+          <h3>Java Full Stack</h3>
+          <p>Learn Backend, Frontend & Database together.</p>
+          <button class="btn">Enroll</button>
+        </div>
+        <div class="my-course-card">
+          <h3>Data Science with Python</h3>
+          <p>Analyze, visualize, and model data effectively.</p>
+          <button class="btn">Enroll</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         SECTION: REQUESTS
+    ============================ -->
+    <section id="requests" class="section hidden-section">
+      <h3>🧾 My Course Requests</h3>
+      <table>
+        <thead>
+          <tr><th>Course Name</th><th>Status</th><th>Date</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Python</td><td><span class="status pending">Pending</span></td><td>2025-11-10</td></tr>
+          <tr><td>JavaScript</td><td><span class="status approved">Approved</span></td><td>2025-11-09</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ===========================
+         SECTION: CERTIFICATES
+    ============================ -->
+    <section id="certificates" class="section hidden-section">
+      <h3>🏅 My Certificates</h3>
+      <div class="card-list">
+        <div class="card">
+          <h4>Python Programming</h4>
+          <p>Issued: 10 Nov 2025</p>
+          <span class="certificate-badge">🎓 View Certificate</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===========================
+       SCRIPT: Section Toggle
+  ============================ -->
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll(".section").forEach(sec => sec.classList.add("hidden-section"));
+      document.getElementById(sectionId).classList.remove("hidden-section");
+      document.getElementById(sectionId).classList.add("active-section");
+
+      // Active sidebar highlight
+      document.querySelectorAll(".user-sidebar li").forEach(li => li.classList.remove("active"));
+      const activeLink = [...document.querySelectorAll(".user-sidebar li")]
+        .find(li => li.textContent.includes(sectionId.charAt(0).toUpperCase() + sectionId.slice(1)));
+      if (activeLink) activeLink.classList.add("active");
+    }
+
+    function logout() {
+      localStorage.clear();
+      alert("You’ve been logged out successfully!");
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>

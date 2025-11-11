@@ -1,4 +1,4 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbx0IMc-0G41hv0zRIWTS4vXumb_M3ojuwvklP-LGljc8POJhb9y-CNLTAr0waxIDJmP1g/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbwEu4QEZP_VBZMe8rhOdjLhYtkQqC2ZmdvK02RDBSqOt4fJUcATHlwYJoliSsYkWOmMxQ/exec";
 
 // ================================
 // 🔗 CONNECT YOUR SCRIPT URL HERE
