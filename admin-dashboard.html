@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillNest Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="admin.js" defer></script>
+</head>
+<body>
+
+  <div class="admin-dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">SkillNest Admin</div>
+      <ul class="sidebar-menu">
+        <li class="active" data-section="overview">📊 Dashboard</li>
+        <li data-section="users">👥 View Users</li>
+        <li data-section="ads">📢 Manage Ads</li>
+        <li data-section="courses">🎓 Manage Courses</li>
+        <li data-section="requests">💳 Course Requests</li>
+        <li data-section="videos">🎥 Manage Videos</li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="admin-header">
+        <h2 id="page-title">Dashboard Overview</h2>
+        <button id="logoutBtn" class="btn small">Logout</button>
+      </header>
+      
+      <section id="content-area"></section>
+    </main>
+  </div>
+
+</body>
+</html>
