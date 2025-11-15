@@ -1,7 +1,7 @@
 // =========================================================
 // 🌐 GOOGLE APPS SCRIPT BACKEND URL
 // =========================================================
-const scriptURL = "https://script.google.com/macros/s/AKfycbxgckpORReKcOaHSoftN4HpJTvC9l4_LTOv5WnTuSWKGWLBrUV4wV3aaox6tlJXGyXBQg/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbwkEUG9zs731jYlx1YuN4JTHvXjlJ0fTPpQkIPhhaz48Cs9OLDz9W6h4TSt9gh9mia4Cg/exec";
 
 
 // =========================================================
@@ -83,9 +83,10 @@ document.getElementById("loginForm")?.addEventListener("submit", async (e) => {
     }
 
     // Save login info
-    localStorage.setItem("role", data.role);
-    localStorage.setItem("email", data.email);
-    localStorage.setItem("name", data.name);
+    // SAVE USER INFO  
+localStorage.setItem("realUserName", data.name);
+localStorage.setItem("email", data.email);
+localStorage.setItem("role", data.role);
 
     // Redirect by role
     if (data.role === "Admin") {

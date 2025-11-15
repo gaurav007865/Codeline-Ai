@@ -1,247 +1,198 @@
-/* =========================================================
-   🌐 USER DASHBOARD (SkillNest - 3 Column Layout)
-========================================================= */
-
-body {
+/* ================================
+   GLOBAL STYLES
+================================ */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  background: #f6f8fc;
-  color: #222;
-  display: flex;
-  height: 100vh;
-  overflow: hidden;
 }
 
-/* ----------------------------
-   📘 Sidebar
------------------------------ */
+body {
+  display: flex;
+  background: #f3f4f6;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* ================================
+   SIDEBAR
+================================ */
 .user-sidebar {
   width: 240px;
-  background: linear-gradient(180deg, #0078ff, #00c6ff);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  padding: 25px 0;
+  background: #1f2937;
+  color: white;
+  padding: 20px;
   position: fixed;
-  height: 100%;
-  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+  height: 100vh;
 }
 
 .user-sidebar h2 {
   text-align: center;
-  font-weight: 700;
   margin-bottom: 25px;
-  letter-spacing: 1px;
 }
 
 .user-sidebar ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  margin-top: 15px;
 }
 
 .user-sidebar li {
-  padding: 14px 25px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  background: #374151;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s;
-  font-weight: 500;
+  transition: 0.2s;
 }
 
-.user-sidebar li:hover,
+.user-sidebar li:hover {
+  background: #4b5563;
+}
+
 .user-sidebar li.active {
-  background: rgba(255, 255, 255, 0.25);
-  border-left: 4px solid #fff;
+  background: #10b981;
 }
 
 .logout-btn {
-  margin-top: auto;
-  align-self: center;
-  background: #ff4b5c;
-  color: #fff;
+  width: 100%;
+  margin-top: 35px;
+  padding: 12px;
   border: none;
-  border-radius: 10px;
-  padding: 10px 25px;
-  font-weight: 600;
+  background: #ef4444;
+  color: white;
+  font-size: 15px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .logout-btn:hover {
-  background: #ff1f3c;
+  background: #dc2626;
 }
 
-/* ----------------------------
-   🧠 Main Area
------------------------------ */
+/* ================================
+   MAIN AREA
+================================ */
 .user-main {
-  flex: 1;
-  margin-left: 240px;
-  padding: 40px 60px;
-  overflow-y: auto;
-  background: #f8faff;
+  margin-left: 260px;
+  padding: 20px;
+  width: calc(100% - 260px);
 }
 
-.user-main h2 {
-  font-size: 1.9rem;
-  color: #0078ff;
-  font-weight: 700;
-  margin-bottom: 5px;
+.header h2 {
+  font-size: 26px;
+  color: #111827;
 }
 
 .subtitle {
-  color: #555;
-  margin-bottom: 40px;
-  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 20px;
 }
 
-/* ----------------------------
-   🔲 Dashboard Grid
------------------------------ */
+/* ================================
+   GRID LAYOUT
+================================ */
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-.column {
-  background: #fff;
-  border-radius: 14px;
-  padding: 25px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  transition: 0.3s;
-}
-
-.column:hover {
-  transform: translateY(-4px);
+  gap: 18px;
 }
 
 .column h3 {
-  color: #0078ff;
-  margin-bottom: 20px;
-  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #111827;
 }
 
-/* ----------------------------
-   📋 Cards inside each column
------------------------------ */
+/* ================================
+   CARDS
+================================ */
 .card-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  min-height: 120px;
+  border: 1px solid #e5e7eb;
 }
 
 .card {
-  background: #f9fbff;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-3px);
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border-left: 4px solid #10b981;
 }
 
 .card h4 {
-  color: #0078ff;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
 .card p {
-  color: #444;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
+  font-size: 14px;
+  color: #4b5563;
 }
 
+/* ================================
+   BUTTON
+================================ */
 .btn {
-  background: linear-gradient(90deg, #0078ff, #00c6ff);
+  background: #10b981;
+  color: white;
+  padding: 8px 12px;
   border: none;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-weight: 600;
+  border-radius: 6px;
+  margin-top: 6px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .btn:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
+  background: #059669;
 }
 
-/* ----------------------------
-   🏅 Status and Certificate
------------------------------ */
+.btn.small {
+  padding: 5px 10px;
+}
+
+/* ================================
+   STATUS BADGES
+================================ */
 .status {
-  padding: 4px 10px;
-  border-radius: 6px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  color: white;
+  font-size: 12px;
+}
+
+.status.pending { background: #f59e0b; }
+.status.approved { background: #10b981; }
+.status.rejected { background: #ef4444; }
+.status.completed { background: #3b82f6; }
+
+/* ================================
+   TABLES
+================================ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+table th, table td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+table th {
+  text-align: left;
+  background: #f3f4f6;
   font-weight: 600;
-  font-size: 0.85rem;
 }
 
-.status.pending {
-  background: #fff3cd;
-  color: #856404;
-}
-
-.status.approved {
-  background: #d4edda;
-  color: #155724;
-}
-
-.status.completed {
-  background: #cce5ff;
-  color: #004085;
-}
-
-.certificate-badge {
-  display: inline-block;
-  background: linear-gradient(90deg, #0078ff, #00c6ff);
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 25px;
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-/* ----------------------------
-   📱 Responsive
------------------------------ */
-@media (max-width: 1024px) {
-  .dashboard-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    flex-direction: column;
-    overflow-y: auto;
-  }
-
-  .user-sidebar {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
-    height: auto;
-    padding: 10px;
-  }
-
-  .user-main {
-    margin-left: 0;
-    padding: 20px;
-  }
-
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
-}
-/* =========================================================
-   🔄 Section Switching Styles
-========================================================= */
+/* ================================
+   SECTION CONTROL
+================================ */
 .section {
   display: none;
-  animation: fadeIn 0.4s ease;
 }
 
 .active-section {
@@ -250,9 +201,4 @@ body {
 
 .hidden-section {
   display: none;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
 }

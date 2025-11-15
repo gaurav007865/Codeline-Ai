@@ -26,7 +26,7 @@
     const videoURL=decodeURIComponent(params.get("video")||"");
     const courseName=decodeURIComponent(params.get("course")||"Unknown Course");
     const email=localStorage.getItem("userEmail")||"guest@unknown";
-    const baseScriptURL="https://script.google.com/macros/s/AKfycbx_tdZxPiF5PZhPUUmtloTdsgEUO425yd-LyxOvrwwCetsZqFIgYeNaQv82RBZo5PZaBQ/exec";
+    const baseScriptURL="https://script.google.com/macros/s/AKfycbxfOQmeZYK8mu2PVdbVuIOn9QXwgGIU4uVGTfz8bdSwmQpQhMTDNZQsmrOics8iSKd6dQ/exec";
     const scriptURL=location.hostname.includes("127.0.0.1")||location.hostname.includes("localhost")
       ?"https://corsproxy.io/?"+encodeURIComponent(baseScriptURL):baseScriptURL;
 
